@@ -11,13 +11,13 @@ public class BinarySearchRecursion {
 
     }
 
-    public static int binary(int[] arr, int s, int end, int target) {
-        if(s>end)
+    public static int binary(int[] arr, int start, int end, int target) {
+        if(start>end)
         {
             return -1;
         }
 
-        int mid=s+(end-s)/2;
+        int mid=start+(end-start)/2;// s-s/2 + end/2= (s+end)/2
         if(arr[mid]==target)
         {
             return mid;
@@ -28,7 +28,7 @@ public class BinarySearchRecursion {
             return binary(arr,mid+1,end,target);
 
         }
-        return binary(arr, s, mid-1, target);
+        return binary(arr, start, mid-1, target);
 
 
     }
